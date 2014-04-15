@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Arabic Romanization</title>
+      <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+        font-family: 'Lato', sans-serif;
+      }
+
+      .container, h1 { text-align: center; margin: 50px auto 40px auto; width: 650px;}
+      .content {margin: 50px auto 40px auto; width: 650px; text-align:left}
+
+      a { color: #4183c4; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      h1 { width: 800px; position:relative; left: -100px; letter-spacing: -1px; line-height: 60px; font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }
+      p { color: rgba(0, 0, 0, 0.5); margin: 20px 0; line-height: 1.6; }
+
+      ul { list-style: none; margin: 25px 0; padding: 0; }
+      li { display: table-cell; font-weight: bold; width: 1%; }
+
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+
+      #pagefooter {
+        margin-top: 35px;
+        color: #ccc;
+      }
+      #pagefooter a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+
+    </style>
+<script language=Javascript> 
+<!--
+var conver;
+function formCleanUp()
+{
+document.translit.out_text.value="";
+document.translit.inp_text.value="";
+}
+function inittext()
+{
+document.translit.out_text.value="";
+document.translit.inp_text.value="";
+conver="";
+}
+function translate()
+{
+document.translit.out_text.value="";
+for (i=0;i<document.translit.inp_text.value.length;i++)
+    (
+document.translit.out_text.value+=convertchar(document.translit.inp_text.value.charAt(i))
+    )
+conver=document.translit.out_text.value;
+}
+function convertchar(letter)
+{
+if (letter=="ا") {return "a"}
+else if (letter=="أ") {return "a"}
+else if (letter=="آ") {return "a"}
+else if (letter=="إ") {return "e"}
+else if (letter=="ب") {return "b"}
+else if (letter=="ت") {return "t"}
+else if (letter=="ث") {return "th"}
+else if (letter=="ج") {return "j"}
+else if (letter=="ح") {return "h"}
+else if (letter=="خ") {return "kh"}
+else if (letter=="د") {return "d"}
+else if (letter=="ذ") {return "d"}
+else if (letter=="ر") {return "r"}
+else if (letter=="ز") {return "z"}
+else if (letter=="س") {return "s"}
+else if (letter=="ش") {return "sh"}
+else if (letter=="ص") {return "s"}
+else if (letter=="ض") {return "d"}
+else if (letter=="ط") {return "t"}
+else if (letter=="ظ") {return "z"}
+else if (letter=="ع") {return "'e"}
+else if (letter=="غ") {return "gh"}
+else if (letter=="ف") {return "f"}
+else if (letter=="ق") {return "q"}
+else if (letter=="ك") {return "k"}
+else if (letter=="ل") {return "l"}
+else if (letter=="م") {return "m"}
+else if (letter=="ن") {return "n"}
+else if (letter=="ه") {return "h"}
+else if (letter=="و") {return "w"}
+else if (letter=="ي") {return "y"}
+else if (letter=="ى") {return "a"}
+else if (letter=="ئ") {return "'e"}
+else if (letter=="ء") {return "'"}
+else if (letter=="ؤ") {return "'e"}
+else if (letter=="لا") {return "la"}
+else if (letter=="ة") {return "h"}
+else if (letter=="؟") {return "?"}
+else if (letter=="!") {return "!"}
+else if (letter=="ـ") {return ""}
+else if (letter=="،") {return ","}
+else if (letter=="َ‎") {return "a"}
+else if (letter=="ُ") {return "u"}
+else if (letter=="ِ‎") {return "e"}
+else if (letter=="ٌ") {return "un"}
+else if (letter=="ً") {return "an"}
+else if (letter=="ٍ") {return "en"}
+else if (letter=="ّ") {return ""}
+else if (letter=="\n") {return "\n"}
+else return letter
+}
+function limitText(limitField, limitNum) {
+    if (limitField.value.length > limitNum) {
+        limitField.value = limitField.value.substring(0, limitNum);
+    } 
+}
+//--> </script>
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="content"></div>
+<form name="translit"> 
+<textarea class="textarea" name="inp_text" rows="9" cols="100" size="80" onkeydown="limitText(this,750);" onkeyup="limitText(this,750);" align="left"></textarea><br> 
+<input class="button" onclick="translate();" value="Convert" name="convert_button" align="left" type="button">
+<input class="button" onclick="if (confirm('Erase all and start over?')) (formCleanUp())" value="Clear" name="clear_button" align="left" type="button"><p><b>Latin Text Below</b> (Max. Characters: 750)</p>
+<textarea class="textarea" name="out_text" rows="9" cols="100" onchange="if (confirm('You need to put your text on the above text area')) conver=document.translit.out_text.value; else document.translit.out_text.value=conver " size="80" align="left"></textarea> 
+
+</form>
+      <div id="pagefooter">
+        <a href="#about">About this site</a>|
+        <a href="#privacy">Privacy and cookies policy</a>|
+        <a href="#contact">Contact us</a>|
+        <a href="#license">© 2014. All rights reserved.</a>
+      </div>
+        <br>
+    </div>
+        <script src="jquery-2.1.0.min.js"></script>
+        <script src="marked-0.3.2.js" type="text/javascript"></script>
+        <script>
+
+             
+if ("onhashchange" in window) {
+    locationHashChanged();
+}
+
+function locationHashChanged() {
+    var file = window.location.hash.replace(/#/g , "")+'.md';
+    var data;
+        $.ajax({
+          url : (file == '.md') ? 'README.md' : file,
+          dataType : 'text',
+          data : data,
+          cache : false,
+          success : function(data) {
+              $(".content").html( marked(data) );
+          }
+      });
+}
+
+window.onhashchange = locationHashChanged;
+        
+        </script>
+  </body>
+</html>
